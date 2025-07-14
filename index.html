@@ -31,9 +31,10 @@
       left: 50%;
       transform: translate(-50%, -50%);
       color: white;
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
       text-align: center;
+      white-space: nowrap;
     }
 
     nav {
@@ -62,6 +63,25 @@
       font-size: 0.9em;
       color: #666;
     }
+
+    .service-list {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .service-item h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .service-item p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #555;
+    }
   </style>
 </head>
 <body>
@@ -76,9 +96,38 @@
   <section>
     <h2>サービス紹介</h2>
     <p>
-      私たち株式会社アークエージェンシーは、AI・脱炭素・建設の3領域を軸に、<br>
-      持続可能な社会の実現を目指す総合ソリューション企業です。
+      私たち株式会社アークエージェンシーは、「人と社会に、持続可能な選択肢を。」という理念のもと、<br>
+      AIによる人材評価、現場力を支える建設事業、環境経営を促進する脱炭素ソリューションの3領域を展開しています。<br>
+      テクノロジーと人の力を融合し、社会課題の解決に貢献する“選ばれる企業”を目指します。
     </p>
+  </section>
+
+  <!-- サービス一覧 -->
+  <section>
+    <h2>サービス一覧</h2>
+    <div class="service-list">
+      <div class="service-item">
+        <h3>人材評価・採用支援</h3>
+        <p>
+          AIを活用したコンピテンシー評価により、採用のミスマッチを防ぎ、<br>
+          人材の最適配置と組織力強化を支援します。
+        </p>
+      </div>
+      <div class="service-item">
+        <h3>建設・溶接工事</h3>
+        <p>
+          工場・建築現場における溶接・内装解体・現場施工など、<br>
+          熟練職人による高品質な施工サービスを提供しています。
+        </p>
+      </div>
+      <div class="service-item">
+        <h3>脱炭素ソリューション</h3>
+        <p>
+          太陽光発電・蓄電池・空調管理システムなど、<br>
+          企業の電力コスト削減と環境配慮経営を支援する設備導入を推進します。
+        </p>
+      </div>
+    </div>
   </section>
 
   <!-- 会社概要 -->
