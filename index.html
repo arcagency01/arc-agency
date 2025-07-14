@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'Noto Sans JP', sans-serif;
-      background-color: #ffffff;
+      background-color: #fff;
       color: #333;
       line-height: 1.6;
     }
@@ -18,13 +18,14 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: white;
+      background: #fff;
       border-bottom: 1px solid #ccc;
       z-index: 1000;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 10px 20px;
+      flex-wrap: wrap;
     }
 
     header .logo {
@@ -37,8 +38,13 @@
       margin-right: 10px;
     }
 
+    header nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
     header nav a {
-      margin-left: 20px;
       text-decoration: none;
       color: #333;
       font-weight: 500;
@@ -47,8 +53,8 @@
 
     .hero {
       margin-top: 70px;
-      position: relative;
       height: 80vh;
+      position: relative;
       overflow: hidden;
     }
 
@@ -67,6 +73,7 @@
       font-size: 2.5rem;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
       text-align: center;
+      padding: 0 20px;
     }
 
     section {
@@ -75,36 +82,46 @@
       margin: 0 auto;
     }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      grid-template-areas:
-        "ai construction"
-        "decarbon decarbon";
+    .services {
+      display: flex;
+      flex-wrap: wrap;
       gap: 20px;
+      justify-content: space-between;
     }
 
-    .service {
-      background-color: #f8f8f8;
+    .service-box {
+      flex: 1 1 calc(33.333% - 20px);
+      background-color: #f9f9f9;
       border-radius: 8px;
       overflow: hidden;
       text-align: center;
     }
 
-    .service img {
+    .service-box img {
       width: 100%;
       height: 200px;
       object-fit: cover;
     }
 
-    .service h3 {
+    .service-box h3 {
       margin: 15px 0;
       font-size: 1.1rem;
     }
 
-    .service.ai { grid-area: ai; }
-    .service.construction { grid-area: construction; }
-    .service.decarbon { grid-area: decarbon; }
+    .service-box p {
+      font-size: 0.95rem;
+      padding: 0 15px 20px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
 
     footer {
       background: #f2f2f2;
@@ -146,23 +163,30 @@
       font-size: 0.8rem;
       color: #777;
       margin-top: 20px;
+      width: 100%;
     }
 
     @media (max-width: 768px) {
+      .services {
+        flex-direction: column;
+      }
+
+      .service-box {
+        flex: 1 1 100%;
+      }
+
       header {
         flex-direction: column;
         align-items: flex-start;
       }
 
-      .hero-text {
-        font-size: 1.6rem;
+      header nav {
+        margin-top: 10px;
+        flex-wrap: wrap;
       }
 
-      .services-grid {
-        grid-template-areas:
-          "ai"
-          "construction"
-          "decarbon";
+      header nav a {
+        margin: 5px 10px 0 0;
       }
     }
   </style>
@@ -189,20 +213,56 @@
 
   <section id="services">
     <h2>サービス紹介</h2>
-    <div class="services-grid">
-      <div class="service ai">
+    <div class="services">
+      <div class="service-box">
         <img src="service-ai.png" alt="人材評価・採用支援" />
         <h3>人材評価・採用支援</h3>
+        <p>
+          AIを活用したコンピテンシー評価により、応募者の特性や能力を客観的に可視化。
+          採用のミスマッチを防ぎ、貴社の人材力向上を支援します。
+          面接支援や人事考課への導入にも対応しています。
+        </p>
       </div>
-      <div class="service construction">
+      <div class="service-box">
         <img src="service-construction.png" alt="建設・溶接工事" />
         <h3>建設・溶接工事</h3>
+        <p>
+          商業施設・工場・住宅など多様な現場に対応した施工を提供。
+          熟練の職人による高品質な溶接技術と柔軟な現場対応力で、
+          安全・安心・スピード感あるサービスを実現しています。
+        </p>
       </div>
-      <div class="service decarbon">
+      <div class="service-box">
         <img src="service-decarbon.png" alt="脱炭素ソリューション" />
         <h3>脱炭素ソリューション</h3>
+        <p>
+          太陽光発電・蓄電池・空調自動制御などを組み合わせた最適な提案で、
+          企業の電力コスト削減とカーボンニュートラル推進を支援。
+          助成金活用やシミュレーションによる導入効果の可視化にも対応可能です。
+        </p>
       </div>
     </div>
+  </section>
+
+  <section id="company">
+    <h2>会社概要</h2>
+    <ul>
+      <li>会社名：株式会社アークエージェンシー</li>
+      <li>所在地：<br>
+        東京本社：〒142-0043 東京都品川区二葉3-15-3 フェリシタ西大井101<br>
+        宮城支店：〒989-0268 宮城県白石市祢宜内69-2
+      </li>
+      <li>電話番号：03-6423-2137</li>
+      <li>創業：昭和50年5月20日</li>
+      <li>設立：令和7年3月27日</li>
+      <li>代表：福羅 裕也</li>
+      <li>事業内容：<br>
+        ・人材評価・採用支援事業<br>
+        ・建設・溶接工事事業<br>
+        ・脱炭素ソリューション事業
+      </li>
+      <li>メール：info@arc-agency.co.jp</li>
+    </ul>
   </section>
 
   <footer>
