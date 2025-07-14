@@ -5,185 +5,108 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>株式会社アークエージェンシー</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Noto Sans JP', sans-serif;
-    }
-
     body {
-      background: #fff;
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #ffffff;
       color: #333;
-      line-height: 1.6;
     }
 
-    .hero {
+    header {
       position: relative;
-      background: url('https://source.unsplash.com/1600x900/?technology') center/cover no-repeat;
       height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
+      overflow: hidden;
     }
 
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
+    header img {
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 1;
+      object-fit: cover;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #007BFF;
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      margin-top: 20px;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-
-    .btn:hover {
-      background: #0056b3;
-    }
-
-    .section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    .section.fade-in {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .section h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
       text-align: center;
-      margin-bottom: 30px;
     }
 
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 20px;
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 40px;
     }
 
-    .card {
-      flex: 1 1 30%;
-      background: #f8f9fa;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
     }
 
-    .bg-light {
-      background: #f4f4f4;
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     footer {
+      background: #f2f2f2;
       text-align: center;
       padding: 20px;
-      background: #222;
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      .cards {
-        flex-direction: column;
-      }
+      font-size: 0.9em;
+      color: #666;
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>株式会社アークエージェンシー</h1>
-      <p>AIとエネルギーで、未来を変える。</p>
-      <a href="#contact" class="btn">お問い合わせ</a>
-    </div>
+
+  <!-- トップの画像セクション -->
+  <header>
+    <img src="hero.png" alt="トップ画像">
+    <div class="hero-text">価値ある選択を、今ここから。</div>
   </header>
 
-  <section class="section" id="services">
+  <!-- サービス紹介 -->
+  <section>
     <h2>サービス紹介</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>AI人材評価ツール</h3>
-        <p>コンピテンシーを可視化し、採用・人事評価の効率化を支援します。</p>
-      </div>
-      <div class="card">
-        <h3>脱炭素ソリューション</h3>
-        <p>太陽光や蓄電池を活用した持続可能なエネルギー提案を行います。</p>
-      </div>
-      <div class="card">
-        <h3>営業支援コンサルティング</h3>
-        <p>データと現場感覚の融合で、御社の売上向上を後押しします。</p>
-      </div>
-    </div>
+    <p>
+      私たち株式会社アークエージェンシーは、「人と社会に、持続可能な選択肢を。」を理念に掲げ、
+      次世代の脱炭素社会・生産性向上社会の実現を目指す総合ソリューション企業です。
+    </p>
   </section>
 
-  <section class="section bg-light" id="about">
+  <!-- 会社概要 -->
+  <section>
     <h2>会社概要</h2>
     <ul>
-      <li><strong>会社名：</strong>株式会社アークエージェンシー</li>
-      <li><strong>設立：</strong>2025年3月27日</li>
-      <li><strong>代表取締役：</strong>福羅 裕也</li>
-      <li><strong>所在地：</strong>東京都または宮城支店</li>
-      <li><strong>事業内容：</strong>AIコンピテンシー評価ツール、太陽光・蓄電池、営業支援</li>
+      <li>会社名：株式会社アークエージェンシー</li>
+      <li>所在地：東京本社 〒142-0043 東京都品川区二葉3-15-3 フェリシタ西大井101
+      宮城支店　〒989-0268 宮城県白石市祢宜内69-2</li>
+      <li>電話番号：03-6423-2137</li>
+      <li>創業：昭和50年5月20日</li>
+      <li>設立：令和7年3月27日</li>
+      <li>代表：福羅 裕也</li>
+      <li>事業内容：人材評価・採用支援事業、建設・溶接工事事業、脱炭素ソリューション事業</li>
+      <li>メール：info@arc-agency.co.jp</li>
     </ul>
   </section>
 
-  <section class="section" id="contact">
+  <!-- お問い合わせリンク -->
+  <section>
     <h2>お問い合わせ</h2>
-    <p>ご相談・ご質問は下記フォームよりお気軽にご連絡ください。</p>
-    <a href="mailto:info@arc-agency.co.jp" class="btn">メールで問い合わせる</a>
+    <p>
+      お問い合わせは <a href="mailto:arcagency.inc@gmail.com">info@arc-agency.co.jp</a> までご連絡ください。
+    </p>
   </section>
 
   <footer>
-    <p>&copy; 2025 株式会社アークエージェンシー</p>
+    &copy; 2025 株式会社アークエージェンシー All Rights Reserved.
   </footer>
 
-  <script>
-    // スクロール時のフェードイン
-    const sections = document.querySelectorAll('.section');
-    const options = { threshold: 0.1 };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, options);
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-  </script>
 </body>
 </html>
