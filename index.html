@@ -11,6 +11,7 @@
       font-family: 'Noto Sans JP', sans-serif;
       background-color: #ffffff;
       color: #333;
+      line-height: 1.6;
     }
 
     header {
@@ -39,7 +40,7 @@
 
     section {
       padding: 60px 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
@@ -49,30 +50,48 @@
       margin-bottom: 40px;
     }
 
-    .service-list {
+    .bg-light {
+      background-color: #f8f8f8;
+    }
+
+    .service-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 20px;
+      gap: 30px;
+    }
+
+    .service-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
     }
 
     .service-item {
-      flex: 0 0 30%;
+      flex: 0 0 48%;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       text-align: center;
+      padding: 20px;
+    }
+
+    .service-full {
+      flex: 0 0 100%;
     }
 
     .service-item img {
       width: 100%;
-      height: auto;
-      max-height: 200px;
+      height: 200px;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 8px;
       margin-bottom: 15px;
     }
 
     .service-item h3 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
 
     .service-item p {
@@ -81,7 +100,7 @@
     }
 
     @media (max-width: 768px) {
-      .service-item {
+      .service-item, .service-full {
         flex: 0 0 100%;
       }
     }
@@ -104,39 +123,46 @@
   </header>
 
   <!-- サービス紹介 -->
-  <section>
+  <section class="bg-light">
     <h2>サービス紹介</h2>
-    <p>
+    <p style="text-align: center;">
       私たち株式会社アークエージェンシーは、「人と社会に、持続可能な選択肢を。」という理念のもと、<br>
       AIによる人材評価、現場力を支える建設事業、環境経営を促進する脱炭素ソリューションの3領域を展開しています。<br>
       テクノロジーと人の力を融合し、社会課題の解決に貢献する“選ばれる企業”を目指します。
     </p>
   </section>
 
-  <!-- サービス -->
+  <!-- サービス一覧 -->
   <section>
     <h2>サービス</h2>
-    <div class="service-list">
-      <div class="service-item">
-        <img src="img/service-ai.png" alt="人材評価">
-        <h3>人材評価・採用支援</h3>
-        <p>AIを活用したコンピテンシー評価で採用精度を向上。組織強化を支援します。</p>
+    <div class="service-grid">
+
+      <div class="service-row">
+        <div class="service-item">
+          <img src="img/service-ai.png" alt="人材評価">
+          <h3>人材評価・採用支援</h3>
+          <p>AIを活用したコンピテンシー評価で採用精度を向上。組織強化を支援します。</p>
+        </div>
+        <div class="service-item">
+          <img src="img/service-construction.png" alt="建設・溶接">
+          <h3>建設・溶接工事</h3>
+          <p>熟練職人による現場施工・内装解体で高品質な工事サービスを提供。</p>
+        </div>
       </div>
-      <div class="service-item">
-        <img src="img/service-construction.png" alt="建設・溶接">
-        <h3>建設・溶接工事</h3>
-        <p>熟練職人による現場施工・内装解体で高品質な工事サービスを提供。</p>
+
+      <div class="service-row">
+        <div class="service-item service-full">
+          <img src="img/service-decarbon.png" alt="脱炭素">
+          <h3>脱炭素ソリューション</h3>
+          <p>太陽光・空調制御システムで企業の省エネとカーボン削減をサポート。</p>
+        </div>
       </div>
-      <div class="service-item">
-        <img src="img/service-decarbon.png" alt="脱炭素">
-        <h3>脱炭素ソリューション</h3>
-        <p>太陽光・空調制御システムで企業の省エネとカーボン削減をサポート。</p>
-      </div>
+
     </div>
   </section>
 
   <!-- 会社概要 -->
-  <section>
+  <section class="bg-light">
     <h2>会社概要</h2>
     <ul>
       <li>会社名：株式会社アークエージェンシー</li>
@@ -164,8 +190,8 @@
   <!-- お問い合わせ -->
   <section>
     <h2>お問い合わせ</h2>
-    <p>
-      お問い合わせは <a href="mailto:arcagency.inc@gmail.com">info@arc-agency.co.jp</a> までご連絡ください。
+    <p style="text-align: center;">
+      お問い合わせは <a href="mailto:info@arc-agency.co.jp">info@arc-agency.co.jp</a> までご連絡ください。
     </p>
   </section>
 
