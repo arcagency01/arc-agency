@@ -15,6 +15,7 @@
       padding-top: 80px;
     }
 
+    /* ヘッダー */
     .site-header {
       position: fixed;
       top: 0;
@@ -86,10 +87,143 @@
         display: block;
       }
     }
+
+    /* トップ画像 */
+    .hero {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 2.2rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+      text-align: center;
+    }
+
+    /* セクション共通 */
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* サービス一覧 */
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .service-box {
+      flex: 1 1 calc(33.333% - 20px);
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .service-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-box img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .service-box h3 {
+      margin: 15px 0;
+      font-size: 1.1rem;
+    }
+
+    /* フッター */
+    footer {
+      background: #f2f2f2;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-col {
+      flex: 1 1 200px;
+      margin-bottom: 20px;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 6px;
+    }
+
+    .footer-col ul li a {
+      color: #333;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .services {
+        flex-direction: column;
+      }
+
+      .service-box {
+        flex: 1 1 100%;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- ヘッダー -->
   <header class="site-header">
     <div class="header-inner">
       <div class="logo">
@@ -106,11 +240,71 @@
     </div>
   </header>
 
+  <!-- トップ画像 -->
+  <div class="hero">
+    <img src="hero.png" alt="トップ画像">
+    <div class="hero-text">価値ある選択を、今ここから。</div>
+  </div>
+
+  <!-- サービス紹介 -->
+  <section id="services">
+    <h2>サービス紹介</h2>
+    <div class="services">
+      <div class="service-box">
+        <img src="service-ai.png" alt="人材評価・採用支援">
+        <h3>人材評価・採用支援</h3>
+      </div>
+      <div class="service-box">
+        <img src="service-construction.png" alt="建設・溶接工事">
+        <h3>建設・溶接工事</h3>
+      </div>
+      <div class="service-box">
+        <img src="service-decarbon.png" alt="脱炭素ソリューション">
+        <h3>脱炭素ソリューション</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <div class="footer-col">
+      <h4>About us</h4>
+      <ul>
+        <li><a href="#">会社情報</a></li>
+        <li><a href="#">ビジョン</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>事業内容</h4>
+      <ul>
+        <li><a href="#">人材評価支援</a></li>
+        <li><a href="#">建設事業</a></li>
+        <li><a href="#">脱炭素提案</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>採用</h4>
+      <ul>
+        <li><a href="#">新卒採用</a></li>
+        <li><a href="#">中途採用</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>お問い合わせ</h4>
+      <ul>
+        <li><a href="#">メールでのお問い合わせ</a></li>
+        <li><a href="#">電話：03-xxxx-xxxx</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Arc Agency Inc. All rights reserved.
+    </div>
+  </footer>
+
   <script>
     function toggleMenu() {
       document.getElementById('navMenu').classList.toggle('show');
     }
   </script>
-
 </body>
 </html>
