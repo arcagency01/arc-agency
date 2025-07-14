@@ -15,336 +15,101 @@
       padding-top: 80px;
     }
 
-    .fixed-header {
+    .site-header {
       position: fixed;
       top: 0;
       width: 100%;
-      background: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 5vw;
+      background: #fff;
+      border-bottom: 1px solid #ccc;
       z-index: 1000;
     }
 
-    .logo-title {
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .logo-title img {
-      height: 50px;
+    .logo img {
+      height: 40px;
     }
 
-    .logo-title span {
+    .logo span {
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: #333;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 16px;
-      justify-content: flex-end;
-      max-width: 100%;
-      overflow-x: auto;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      font-size: 0.95rem;
       white-space: nowrap;
     }
 
-    .nav-toggle {
+    .nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .menu-btn {
       display: none;
       font-size: 1.5rem;
       background: none;
       border: none;
+      cursor: pointer;
     }
 
     @media (max-width: 768px) {
-      .nav-links {
+      .nav {
         display: none;
         flex-direction: column;
-        background: white;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        padding: 10px;
+        width: 100%;
+        margin-top: 10px;
       }
-      .nav-links.active {
+      .nav.show {
         display: flex;
       }
-      .nav-toggle {
+      .menu-btn {
         display: block;
       }
-    }
-
-    header img {
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-    }
-
-    .hero-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 2.2rem;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-      text-align: center;
-      white-space: nowrap;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 40px;
-    }
-
-    .bg-light {
-      background-color: #f8f8f8;
-    }
-
-    .service-grid {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    .service-item {
-      flex: 1 1 calc(33.333% - 30px);
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      text-align: center;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .service-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-
-    .service-item h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    .service-item p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    @media (max-width: 768px) {
-      .service-item {
-        flex: 1 1 100%;
-      }
-    }
-
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    .fade-up.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    footer {
-      background: #f2f2f2;
-      padding: 40px 20px;
-      font-size: 0.9em;
-      color: #666;
-    }
-
-    .footer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      max-width: 1000px;
-      margin: 0 auto 20px;
-    }
-
-    .footer-section {
-      flex: 0 0 23%;
-      margin-bottom: 20px;
-    }
-
-    .footer-section h4 {
-      margin-bottom: 10px;
-      color: #333;
-    }
-
-    .footer-section ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .footer-section ul li {
-      margin-bottom: 8px;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      font-size: 0.85em;
-      color: #aaa;
     }
   </style>
 </head>
 <body>
 
-  <div class="fixed-header">
-    <div class="logo-title">
-      <img src="logo.jpg" alt="ロゴ" />
-      <span>株式会社アークエージェンシー</span>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <img src="logo.jpg" alt="ロゴ">
+        <span>株式会社アークエージェンシー</span>
+      </div>
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+      <nav class="nav" id="navMenu">
+        <a href="#">ホーム</a>
+        <a href="#services">サービス</a>
+        <a href="#company">会社概要</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
     </div>
-    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
-    <nav class="nav-links">
-      <a href="#">ホーム</a>
-      <a href="#services">サービス</a>
-      <a href="#company">会社概要</a>
-      <a href="#contact">お問い合わせ</a>
-    </nav>
-  </div>
-
-  <header>
-    <img src="hero.png" alt="トップ画像" />
-    <div class="hero-text">価値ある選択を、今ここから。</div>
   </header>
 
-  <section class="bg-light fade-up">
-    <h2>サービス紹介</h2>
-    <p style="text-align: center;">
-      私たち株式会社アークエージェンシーは、「人と社会に、持続可能な選択肢を。」という理念のもと、<br>
-      AIによる人材評価、現場力を支える建設事業、環境経営を促進する脱炭素ソリューションの3領域を展開しています。<br>
-      テクノロジーと人の力を融合し、社会課題の解決に貢献する“選ばれる企業”を目指します。
-    </p>
-  </section>
-
-  <section id="services" class="fade-up">
-    <h2>サービス</h2>
-    <div class="service-grid">
-      <div class="service-item">
-        <img src="img/service-ai.png" alt="人材評価">
-        <h3>人材評価・採用支援</h3>
-        <p>AIを活用したコンピテンシー評価で採用精度を向上。組織強化を支援します。</p>
-      </div>
-      <div class="service-item">
-        <img src="img/service-construction.png" alt="建設・溶接">
-        <h3>建設・溶接工事</h3>
-        <p>熟練職人による現場施工・内装解体で高品質な工事サービスを提供。</p>
-      </div>
-      <div class="service-item">
-        <img src="img/service-decarbon.png" alt="脱炭素">
-        <h3>脱炭素ソリューション</h3>
-        <p>太陽光・空調制御システムで企業の省エネとカーボン削減をサポート。</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="company" class="bg-light fade-up">
-    <h2>会社概要</h2>
-    <ul>
-      <li>会社名：株式会社アークエージェンシー</li>
-      <li>
-        所在地：
-        <div style="margin-left: 1em;">
-          東京本社　〒142-0043 東京都品川区二葉3-15-3 フェリシタ西大井101<br>
-          宮城支店　〒989-0268 宮城県白石市祢宜内69-2
-        </div>
-      </li>
-      <li>電話番号：03-6423-2137</li>
-      <li>創業：昭和50年5月20日</li>
-      <li>設立：令和7年3月27日</li>
-      <li>代表：福羅 裕也</li>
-      <li>
-        事業内容：<br>
-        ・人材評価・採用支援事業<br>
-        ・建設・溶接工事事業<br>
-        ・脱炭素ソリューション事業
-      </li>
-      <li>メール：info@arc-agency.co.jp</li>
-    </ul>
-  </section>
-
-  <section id="contact" class="fade-up">
-    <h2>お問い合わせ</h2>
-    <p style="text-align: center;">
-      お問い合わせは <a href="mailto:info@arc-agency.co.jp">info@arc-agency.co.jp</a> までご連絡ください。
-    </p>
-  </section>
-
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-section">
-        <h4>About us</h4>
-        <ul>
-          <li><a href="#">会社情報</a></li>
-          <li><a href="#">理念</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>事業内容</h4>
-        <ul>
-          <li><a href="#">人材評価・採用支援</a></li>
-          <li><a href="#">建設・溶接工事</a></li>
-          <li><a href="#">脱炭素ソリューション</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>採用</h4>
-        <ul>
-          <li><a href="#">新卒採用</a></li>
-          <li><a href="#">中途採用</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>お問い合わせ</h4>
-        <ul>
-          <li><a href="mailto:info@arc-agency.co.jp">メールでのお問い合わせ</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2025 株式会社アークエージェンシー All Rights Reserved.
-    </div>
-  </footer>
-
   <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          observer.unobserve(entry.target);
-        }
-      });
-    });
-
-    document.querySelectorAll('.fade-up').forEach(el => {
-      observer.observe(el);
-    });
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('show');
+    }
   </script>
 
 </body>
