@@ -12,17 +12,48 @@
       background-color: #ffffff;
       color: #333;
       line-height: 1.6;
+      padding-top: 70px;
     }
 
-    header {
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
+    .fixed-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      z-index: 1000;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-title img {
+      height: 40px;
+    }
+
+    .logo-title span {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
     }
 
     header img {
       width: 100%;
-      height: 100%;
+      height: 100vh;
       object-fit: cover;
     }
 
@@ -55,16 +86,14 @@
     }
 
     .service-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
       gap: 30px;
-    }
-
-    .service-full {
-      grid-column: span 2;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
 
     .service-item {
+      flex: 0 0 32%;
       background: #fff;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -91,12 +120,8 @@
     }
 
     @media (max-width: 768px) {
-      .service-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-full {
-        grid-column: span 1;
+      .service-item {
+        flex: 0 0 100%;
       }
     }
 
@@ -113,14 +138,59 @@
 
     footer {
       background: #f2f2f2;
-      text-align: center;
-      padding: 20px;
+      padding: 40px 20px;
       font-size: 0.9em;
       color: #666;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: 0 auto 20px;
+    }
+
+    .footer-section {
+      flex: 0 0 23%;
+      margin-bottom: 20px;
+    }
+
+    .footer-section h4 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.85em;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
+
+  <div class="fixed-header">
+    <div class="logo-title">
+      <img src="img/logo.png" alt="ロゴ" />
+      <span>株式会社アークエージェンシー</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#">ホーム</a>
+      <a href="#services">サービス</a>
+      <a href="#company">会社概要</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
 
   <header>
     <img src="hero.png" alt="トップ画像" />
@@ -136,7 +206,7 @@
     </p>
   </section>
 
-  <section class="fade-up">
+  <section id="services" class="fade-up">
     <h2>サービス</h2>
     <div class="service-grid">
       <div class="service-item">
@@ -149,7 +219,7 @@
         <h3>建設・溶接工事</h3>
         <p>熟練職人による現場施工・内装解体で高品質な工事サービスを提供。</p>
       </div>
-      <div class="service-item service-full">
+      <div class="service-item">
         <img src="img/service-decarbon.png" alt="脱炭素">
         <h3>脱炭素ソリューション</h3>
         <p>太陽光・空調制御システムで企業の省エネとカーボン削減をサポート。</p>
@@ -157,7 +227,7 @@
     </div>
   </section>
 
-  <section class="bg-light fade-up">
+  <section id="company" class="bg-light fade-up">
     <h2>会社概要</h2>
     <ul>
       <li>会社名：株式会社アークエージェンシー</li>
@@ -168,6 +238,7 @@
           宮城支店　〒989-0268 宮城県白石市祢宜内69-2
         </div>
       </li>
+      <li>電話番号：03-6423-2137</li>
       <li>創業：昭和50年5月20日</li>
       <li>設立：令和7年3月27日</li>
       <li>代表：福羅 裕也</li>
@@ -177,12 +248,11 @@
         ・建設・溶接工事事業<br>
         ・脱炭素ソリューション事業
       </li>
-      <li>電話番号：03-6423-2137</li>
       <li>メール：info@arc-agency.co.jp</li>
     </ul>
   </section>
 
-  <section class="fade-up">
+  <section id="contact" class="fade-up">
     <h2>お問い合わせ</h2>
     <p style="text-align: center;">
       お問い合わせは <a href="mailto:info@arc-agency.co.jp">info@arc-agency.co.jp</a> までご連絡ください。
@@ -190,7 +260,39 @@
   </section>
 
   <footer>
-    &copy; 2025 株式会社アークエージェンシー All Rights Reserved.
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h4>About us</h4>
+        <ul>
+          <li><a href="#">会社情報</a></li>
+          <li><a href="#">理念</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="#">人材評価・採用支援</a></li>
+          <li><a href="#">建設・溶接工事</a></li>
+          <li><a href="#">脱炭素ソリューション</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>採用</h4>
+        <ul>
+          <li><a href="#">新卒採用</a></li>
+          <li><a href="#">中途採用</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>お問い合わせ</h4>
+        <ul>
+          <li><a href="mailto:info@arc-agency.co.jp">メールでのお問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 株式会社アークエージェンシー All Rights Reserved.
+    </div>
   </footer>
 
   <script>
@@ -207,5 +309,6 @@
       observer.observe(el);
     });
   </script>
+
 </body>
 </html>
