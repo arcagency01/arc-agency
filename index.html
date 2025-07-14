@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>株式会社アークエージェンシー</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
@@ -51,31 +51,39 @@
 
     .service-list {
       display: flex;
-      flex-direction: column;
-      gap: 60px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     .service-item {
+      flex: 0 0 30%;
       text-align: center;
     }
 
     .service-item img {
       width: 100%;
-      max-width: 800px;
       height: auto;
+      max-height: 200px;
+      object-fit: cover;
       border-radius: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .service-item h3 {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
     }
 
     .service-item p {
-      font-size: 1rem;
-      line-height: 1.8;
+      font-size: 0.95rem;
       color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .service-item {
+        flex: 0 0 100%;
+      }
     }
 
     footer {
@@ -89,9 +97,9 @@
 </head>
 <body>
 
-  <!-- トップの画像 -->
+  <!-- トップ画像 -->
   <header>
-    <img src="hero.jpg" alt="トップ画像">
+    <img src="hero.png" alt="トップ画像" />
     <div class="hero-text">価値ある選択を、今ここから。</div>
   </header>
 
@@ -112,28 +120,17 @@
       <div class="service-item">
         <img src="img/service-ai.png" alt="人材評価">
         <h3>人材評価・採用支援</h3>
-        <p>
-          AIを活用したコンピテンシー評価により、採用のミスマッチを防ぎ、<br>
-          人材の最適配置と組織力強化を支援します。
-        </p>
+        <p>AIを活用したコンピテンシー評価で採用精度を向上。組織強化を支援します。</p>
       </div>
-
       <div class="service-item">
-        <img src="img/service-construction.png" alt="溶接・建設">
+        <img src="img/service-construction.png" alt="建設・溶接">
         <h3>建設・溶接工事</h3>
-        <p>
-          工場・建築現場における溶接・内装解体・現場施工など、<br>
-          熟練職人による高品質な施工サービスを提供しています。
-        </p>
+        <p>熟練職人による現場施工・内装解体で高品質な工事サービスを提供。</p>
       </div>
-
       <div class="service-item">
-        <img src="img/service-decarbon.png" alt="太陽光・脱炭素">
+        <img src="img/service-decarbon.png" alt="脱炭素">
         <h3>脱炭素ソリューション</h3>
-        <p>
-          太陽光発電・蓄電池・空調管理システムなど、<br>
-          企業の電力コスト削減と環境配慮経営を支援する設備導入を推進します。
-        </p>
+        <p>太陽光・空調制御システムで企業の省エネとカーボン削減をサポート。</p>
       </div>
     </div>
   </section>
