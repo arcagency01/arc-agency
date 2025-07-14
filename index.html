@@ -37,23 +37,45 @@
       white-space: nowrap;
     }
 
-    nav {
-      position: absolute;
-      top: 20px;
-      right: 40px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-    }
-
     section {
       padding: 60px 20px;
       max-width: 900px;
       margin: 0 auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .service-list {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .service-item {
+      text-align: center;
+    }
+
+    .service-item img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .service-item h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .service-item p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #555;
     }
 
     footer {
@@ -63,32 +85,13 @@
       font-size: 0.9em;
       color: #666;
     }
-
-    .service-list {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      margin-top: 30px;
-    }
-
-    .service-item h3 {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-      color: #222;
-    }
-
-    .service-item p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: #555;
-    }
   </style>
 </head>
 <body>
 
-  <!-- トップの画像セクション -->
+  <!-- トップの画像 -->
   <header>
-    <img src="hero.png" alt="トップ画像">
+    <img src="hero.jpg" alt="トップ画像">
     <div class="hero-text">価値ある選択を、今ここから。</div>
   </header>
 
@@ -102,25 +105,30 @@
     </p>
   </section>
 
-  <!-- サービス一覧 -->
+  <!-- サービス -->
   <section>
-    <h2>サービス一覧</h2>
+    <h2>サービス</h2>
     <div class="service-list">
       <div class="service-item">
+        <img src="img/service-ai.jpg" alt="人材評価">
         <h3>人材評価・採用支援</h3>
         <p>
           AIを活用したコンピテンシー評価により、採用のミスマッチを防ぎ、<br>
           人材の最適配置と組織力強化を支援します。
         </p>
       </div>
+
       <div class="service-item">
+        <img src="img/service-construction.jpg" alt="溶接・建設">
         <h3>建設・溶接工事</h3>
         <p>
           工場・建築現場における溶接・内装解体・現場施工など、<br>
           熟練職人による高品質な施工サービスを提供しています。
         </p>
       </div>
+
       <div class="service-item">
+        <img src="img/service-decarbon.jpg" alt="脱炭素ソリューション">
         <h3>脱炭素ソリューション</h3>
         <p>
           太陽光発電・蓄電池・空調管理システムなど、<br>
@@ -156,7 +164,7 @@
     </ul>
   </section>
 
-  <!-- お問い合わせリンク -->
+  <!-- お問い合わせ -->
   <section>
     <h2>お問い合わせ</h2>
     <p>
