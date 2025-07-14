@@ -2,9 +2,9 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>株式会社アークエージェンシー</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -55,30 +55,21 @@
     }
 
     .service-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 30px;
     }
 
-    .service-row {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 30px;
+    .service-full {
+      grid-column: span 2;
     }
 
     .service-item {
-      flex: 0 0 48%;
       background: #fff;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       text-align: center;
       padding: 20px;
-    }
-
-    .service-full {
-      flex: 0 0 100%;
     }
 
     .service-item img {
@@ -100,9 +91,24 @@
     }
 
     @media (max-width: 768px) {
-      .service-item, .service-full {
-        flex: 0 0 100%;
+      .service-grid {
+        grid-template-columns: 1fr;
       }
+
+      .service-full {
+        grid-column: span 1;
+      }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-up.active {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     footer {
@@ -116,14 +122,12 @@
 </head>
 <body>
 
-  <!-- トップ画像 -->
   <header>
     <img src="hero.png" alt="トップ画像" />
     <div class="hero-text">価値ある選択を、今ここから。</div>
   </header>
 
-  <!-- サービス紹介 -->
-  <section class="bg-light">
+  <section class="bg-light fade-up">
     <h2>サービス紹介</h2>
     <p style="text-align: center;">
       私たち株式会社アークエージェンシーは、「人と社会に、持続可能な選択肢を。」という理念のもと、<br>
@@ -132,37 +136,28 @@
     </p>
   </section>
 
-  <!-- サービス一覧 -->
-  <section>
+  <section class="fade-up">
     <h2>サービス</h2>
     <div class="service-grid">
-
-      <div class="service-row">
-        <div class="service-item">
-          <img src="img/service-ai.png" alt="人材評価">
-          <h3>人材評価・採用支援</h3>
-          <p>AIを活用したコンピテンシー評価で採用精度を向上。組織強化を支援します。</p>
-        </div>
-        <div class="service-item">
-          <img src="img/service-construction.png" alt="建設・溶接">
-          <h3>建設・溶接工事</h3>
-          <p>熟練職人による現場施工・内装解体で高品質な工事サービスを提供。</p>
-        </div>
+      <div class="service-item">
+        <img src="img/service-ai.png" alt="人材評価">
+        <h3>人材評価・採用支援</h3>
+        <p>AIを活用したコンピテンシー評価で採用精度を向上。組織強化を支援します。</p>
       </div>
-
-      <div class="service-row">
-        <div class="service-item service-full">
-          <img src="img/service-decarbon.png" alt="脱炭素">
-          <h3>脱炭素ソリューション</h3>
-          <p>太陽光・空調制御システムで企業の省エネとカーボン削減をサポート。</p>
-        </div>
+      <div class="service-item">
+        <img src="img/service-construction.png" alt="建設・溶接">
+        <h3>建設・溶接工事</h3>
+        <p>熟練職人による現場施工・内装解体で高品質な工事サービスを提供。</p>
       </div>
-
+      <div class="service-item service-full">
+        <img src="img/service-decarbon.png" alt="脱炭素">
+        <h3>脱炭素ソリューション</h3>
+        <p>太陽光・空調制御システムで企業の省エネとカーボン削減をサポート。</p>
+      </div>
     </div>
   </section>
 
-  <!-- 会社概要 -->
-  <section class="bg-light">
+  <section class="bg-light fade-up">
     <h2>会社概要</h2>
     <ul>
       <li>会社名：株式会社アークエージェンシー</li>
@@ -173,7 +168,6 @@
           宮城支店　〒989-0268 宮城県白石市祢宜内69-2
         </div>
       </li>
-      <li>電話番号：03-6423-2137</li>
       <li>創業：昭和50年5月20日</li>
       <li>設立：令和7年3月27日</li>
       <li>代表：福羅 裕也</li>
@@ -183,12 +177,12 @@
         ・建設・溶接工事事業<br>
         ・脱炭素ソリューション事業
       </li>
+      <li>電話番号：03-6423-2137</li>
       <li>メール：info@arc-agency.co.jp</li>
     </ul>
   </section>
 
-  <!-- お問い合わせ -->
-  <section>
+  <section class="fade-up">
     <h2>お問い合わせ</h2>
     <p style="text-align: center;">
       お問い合わせは <a href="mailto:info@arc-agency.co.jp">info@arc-agency.co.jp</a> までご連絡ください。
@@ -199,5 +193,19 @@
     &copy; 2025 株式会社アークエージェンシー All Rights Reserved.
   </footer>
 
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
