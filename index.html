@@ -22,10 +22,10 @@
       border-bottom: 1px solid #ccc;
       z-index: 1000;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       padding: 10px 20px;
+      flex-wrap: wrap;
     }
 
     header .logo {
@@ -41,7 +41,6 @@
     header nav {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-end;
       gap: 15px;
     }
 
@@ -50,7 +49,6 @@
       color: #333;
       font-weight: 500;
       font-size: 0.95rem;
-      white-space: nowrap;
     }
 
     .hero {
@@ -103,11 +101,10 @@
       width: 100%;
       height: 200px;
       object-fit: cover;
-      background-color: #eee;
     }
 
     .service-box h3 {
-      margin: 15px 0 10px;
+      margin: 15px 0;
       font-size: 1.1rem;
     }
 
@@ -185,8 +182,7 @@
 
       header nav {
         margin-top: 10px;
-        width: 100%;
-        justify-content: flex-start;
+        flex-wrap: wrap;
       }
 
       header nav a {
@@ -199,7 +195,7 @@
 
   <header>
     <div class="logo">
-      <img src="logo.jpg" alt="ロゴ" />
+      <img src="img/logo.jpg" alt="ロゴ" />
       <span>株式会社アークエージェンシー</span>
     </div>
     <nav>
@@ -211,7 +207,7 @@
   </header>
 
   <div class="hero">
-    <img src="hero.png" alt="トップ画像" />
+    <img src="img/hero.png" alt="トップ画像" />
     <div class="hero-text">価値ある選択を、今ここから。</div>
   </div>
 
@@ -219,7 +215,7 @@
     <h2>サービス紹介</h2>
     <div class="services">
       <div class="service-box">
-        <img src="service-ai.png" alt="人材評価・採用支援"
+        <img src="img/service-ai.png" alt="人材評価・採用支援" />
         <h3>人材評価・採用支援</h3>
         <p>
           AIを活用したコンピテンシー評価により、応募者の特性や能力を客観的に可視化。
@@ -228,7 +224,7 @@
         </p>
       </div>
       <div class="service-box">
-        <img src="service-construction.png" alt="建設・溶接工事"
+        <img src="img/service-construction.png" alt="建設・溶接工事" />
         <h3>建設・溶接工事</h3>
         <p>
           商業施設・工場・住宅など多様な現場に対応した施工を提供。
@@ -237,7 +233,7 @@
         </p>
       </div>
       <div class="service-box">
-        <img src="service-decarbon.png" alt="脱炭素ソリューション"
+        <img src="img/service-decarbon.png" alt="脱炭素ソリューション" />
         <h3>脱炭素ソリューション</h3>
         <p>
           太陽光発電・蓄電池・空調自動制御などを組み合わせた最適な提案で、
