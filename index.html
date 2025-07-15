@@ -40,10 +40,7 @@
 
     header nav {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
       gap: 15px;
-      max-width: 100%;
     }
 
     header nav a {
@@ -51,6 +48,39 @@
       color: #333;
       font-weight: 500;
       font-size: 0.95rem;
+    }
+
+    /* ハンバーガーメニュー用 */
+    .menu-icon {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      header nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 10px;
+      }
+
+      #menu-toggle:checked + .menu-icon + nav {
+        display: flex;
+      }
+
+      header nav a {
+        padding: 10px 0;
+        border-top: 1px solid #eee;
+      }
     }
 
     .hero {
@@ -167,30 +197,6 @@
       margin-top: 20px;
       width: 100%;
     }
-
-    @media (max-width: 768px) {
-      .services {
-        flex-direction: column;
-      }
-
-      .service-box {
-        flex: 1 1 100%;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      header nav {
-        margin-top: 10px;
-        flex-wrap: wrap;
-      }
-
-      header nav a {
-        margin: 5px 10px 0 0;
-      }
-    }
   </style>
 </head>
 <body>
@@ -200,6 +206,10 @@
       <img src="logo.jpg" alt="ロゴ" />
       <span>株式会社アークエージェンシー</span>
     </div>
+
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
     <nav>
       <a href="#">ホーム</a>
       <a href="#services">サービス</a>
@@ -213,11 +223,11 @@
     <div class="hero-text">価値ある選択を、今ここから。</div>
   </div>
 
-   <section id="services">
+  <section id="services">
     <h2>サービス紹介</h2>
     <div class="services">
       <div class="service-box">
-        <img src="img/service-ai.png" alt="人材評価・採用支援" />
+        <img src="service-ai.png" alt="人材評価・採用支援" />
         <h3>人材評価・採用支援</h3>
         <p>
           AIを活用したコンピテンシー評価により、応募者の特性や能力を客観的に可視化。
@@ -226,7 +236,7 @@
         </p>
       </div>
       <div class="service-box">
-        <img src="img/service-construction.png" alt="建設・溶接工事" />
+        <img src="service-construction.png" alt="建設・溶接工事" />
         <h3>建設・溶接工事</h3>
         <p>
           商業施設・工場・住宅など多様な現場に対応した施工を提供。
@@ -235,7 +245,7 @@
         </p>
       </div>
       <div class="service-box">
-        <img src="img/service-decarbon.png" alt="脱炭素ソリューション" />
+        <img src="service-decarbon.png" alt="脱炭素ソリューション" />
         <h3>脱炭素ソリューション</h3>
         <p>
           太陽光発電・蓄電池・空調自動制御などを組み合わせた最適な提案で、
